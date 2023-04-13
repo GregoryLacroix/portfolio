@@ -26,7 +26,13 @@ class CustomFormType extends AbstractType
             ->add('about', CKEditorType::class, [
                 'label' => 'À propos de vous',
                 'attr' => [
-                    'rows' => 7
+                    'rows' => 10
+                ]
+            ])
+            ->add('location', CKEditorType::class, [
+                'label' => 'Location',
+                'attr' => [
+                    'rows' => 10
                 ]
             ])
             ->add('footerColor', ColorType::class, [
