@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\CustomSite;
+use App\Entity\Portfolio;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,8 +23,12 @@ class SiteController extends AbstractController
         $custom = $this->em->getRepository(CustomSite::class)->findOneBy(['isActive' => 1]);
         dump($custom);
 
+        $websites = $this->em->getRepository(Portfolio::class)->findBy(['isActive' => 1]);
+        dump($websites);
+
         return $this->render('site/index.html.twig', [
-            'custom' => $custom
+            'custom' => $custom,
+            'websites' => $websites
         ]);
     }
 }
