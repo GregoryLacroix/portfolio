@@ -104,7 +104,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">Graphic Artist - Web Designer - Illustrator</p>
+                <p class="masthead-subheading font-weight-light mb-0">{{ custom.skills }}</p>
             </div>
         </header>
 
@@ -268,7 +268,7 @@
                             <!-- an error submitting the form-->
                             <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                             <!-- Submit Button-->
-                            <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">ENVOYER</button>
+                            <button class="btn btn-primary btn-xl disabled" style="background-color: {{ custom.hoverLinkColor }} !important;" id="submitButton" type="submit">ENVOYER</button>
                         </form>
                     </div>
                 </div>
