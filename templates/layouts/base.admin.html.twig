@@ -80,7 +80,7 @@
             </div>
         </header>
         {% set currentRoute = app.request.attributes.get('_route') %}
-        <div class="container-fluid" {% if currentRoute == 'admin_login' %} style="display:none !important;" {% endif %}> 
+        <div class="container-fluid" {% if currentRoute == 'app_login' %} style="display:none !important;" {% endif %}> 
             <div class="row">
                 <nav id="sidebarMenu" class="col-6 col-sm-4 col-md-3 col-lg-2 d-md-block sidebar collapse shadow">
                     <div class="position-sticky pt-3 ">
@@ -162,8 +162,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                {# <a class="nav-link text-dark d-flex align-items-center" href="{{ path('app_logout') }}"> #}
-                                <a class="nav-link text-dark d-flex align-items-center" href="">
+                                <a class="nav-link text-dark d-flex align-items-center" href="{{ path('app_logout') }}">
                                 {# <i class="fas fa-sign-out-alt"></i> #}
                                 <img src="{{ asset('images/icone-gif/fleche-droite.gif') }}" style="width: 30px !important;" alt="Logout" class="me-2">
                                 <span data-feather="bar-chart-2"></span>
@@ -176,7 +175,7 @@
                 </nav>
             </div>
         </div>
-        <main class="{% if currentRoute == 'admin_login' %}col-md-12 ms-sm-auto col-lg-12 px-md-4{% else %}col-md-9 ms-sm-auto col-lg-10 px-md-4{% endif %}">
+        <main class="{% if currentRoute == 'app_login' %}col-md-12 ms-sm-auto col-lg-12 px-md-4{% else %}col-md-9 ms-sm-auto col-lg-10 px-md-4{% endif %}">
 
             <div class="d-flex justify-content-end mt-2">
                 
