@@ -4,9 +4,11 @@ namespace App\Form;
 
 use App\Entity\Portfolio;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class PortfolioFormType extends AbstractType
 {
@@ -19,10 +21,11 @@ class PortfolioFormType extends AbstractType
                     'placeholder' => 'Titre du site'
                 ]
             ])
-            ->add('description', TextType::class, [
+            ->add('description', TextareaType::class, [
                 'label' => false,
                 'attr' => [
-                    'placeholder' => 'Description du site'
+                    'placeholder' => 'Description du site',
+                    'rows' => 7
                 ]
             ])
             ->add('url', TextType::class, [

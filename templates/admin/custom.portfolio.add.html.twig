@@ -18,19 +18,14 @@
 
     <h1 class="text-center my-5 focus-in-contract">Ajouter dans le portfolio</h1>
     <div class="col-12 col-sm-10 col-md-7 col-lg-5 col-xl-5 mx-auto mb-5">
-    {# {{ form_start(customForm) }}
-        {{ form_row(customForm.navColor) }}
-        {{ form_row(customForm.footerColor) }}
-        {{ form_row(customForm.copyrightColor) }}
-        {{ form_row(customForm.contentColor) }}
-        {{ form_row(customForm.hoverLinkColor) }}
-        {{ form_row(customForm.skills) }}
-        {{ form_row(customForm.logoFileVich) }}
-        {{ form_row(customForm.photoFileVich) }}
-        {{ form_row(customForm.cvFileVich) }}
+    {{ form_start(formWebSite) }}
+        {{ form_row(formWebSite.title) }}
+        {{ form_row(formWebSite.description) }}
+        {{ form_row(formWebSite.url) }}
+        {{ form_row(formWebSite.screenshotFileVich) }}
 
         <button type="submit" class="btn btn-dark">Enregistrer</button>
-    {{ form_end(customForm) }} #}
+    {{ form_end(formWebSite) }}
     </div>
 
 {% endblock %}

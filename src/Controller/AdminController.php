@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\CustomSite;
+use App\Entity\Portfolio;
 use App\Form\CustomFormType;
+use App\Form\PortfolioFormType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -61,7 +63,7 @@ class AdminController extends AbstractController
     public function customSiteListing(Request $request): Response
     {
         $customs = $this->em->getRepository(CustomSite::class)->findAll();
-        dump($customs);
+        // dump($customs);
 
         return $this->render('admin/custom.website.listing.html.twig', [
             'customs' => $customs
@@ -75,6 +77,8 @@ class AdminController extends AbstractController
 
         if($search['category'] == 'custom')
             $repository = $this->em->getRepository(CustomSite::class);
+        elseif($search['category'] == 'portfolio')
+            $repository = $this->em->getRepository(Portfolio::class);
 
         $data = $repository->find($search['id']);
 
@@ -92,9 +96,40 @@ class AdminController extends AbstractController
     }
 
     #[Route('/admin/custom-portfolio/add', name: 'app_custom_portfolio_add')]
+    #[Route('/admin/custom-portfolio/edit/{id}', name: 'app_custom_portfolio_edit')]
+    public function customPortfolioPost(Request $request, Portfolio $webSite = null): Response
+    {
+        if(!$webSite)
+            $webSite = new Portfolio();
+        $formWebSite = $this->createForm(PortfolioFormType::class, $webSite);
+        $formWebSite->handleRequest($request);
+
+        if($formWebSite->isSubmitted() && $formWebSite->isValid()){
+            $this->em->persist($webSite);
+            $this->em->flush();
+
+            $txt = 'enregistrées';
+            if($webSite->getId())
+                $txt = 'modifiées';
+
+            $this->addFlash('success', "Les données ont été $txt avec succès.");
+
+            return $this->redirectToRoute('app_custom_listing');
+        }
+
+        return $this->render('admin/custom.portfolio.add.html.twig', [
+            'formWebSite' => $formWebSite->createView()
+        ]);
+    }
+
+    #[Route('/admin/custom-portfolio-listing', name: 'app_custom_portfolio')]
     public function customPortfolio(Request $request): Response
     {
-        return $this->render('admin/custom.portfolio.add.html.twig', [
+        $portfolios = $this->em->getRepository(Portfolio::class)->findAll();
+        dump($portfolios);
+
+        return $this->render('admin/custom.portfolio.listing.html.twig', [
+            'portfolios' => $portfolios
         ]);
     }
 }
