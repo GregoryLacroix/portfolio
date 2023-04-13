@@ -158,7 +158,7 @@ class CustomSite
         $this->photoFileVich = $photoFile;
 
         if ($photoFile) {
-            // $this->updatedAt = new \DateTimeImmutable();
+            $this->updatedAt = new \DateTimeImmutable();
         }
 
         return $this;

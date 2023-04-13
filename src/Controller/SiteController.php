@@ -17,7 +17,7 @@ class SiteController extends AbstractController
     }
 
     #[Route('/', name: 'app_site')]
-    public function index(): Response
+    public function siteCustom(): Response
     {
         $custom = $this->em->getRepository(CustomSite::class)->findOneBy(['isActive' => 1]);
         dump($custom);

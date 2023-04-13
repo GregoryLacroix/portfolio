@@ -32,8 +32,11 @@ class AdminController extends AbstractController
     {
         if(!$custom)
             $custom = new CustomSite();
+        
         $customForm = $this->createForm(CustomFormType::class, $custom);
         $customForm->handleRequest($request);
+
+        dump($request);
 
         if($customForm->isSubmitted() && $customForm->isValid()){
 
