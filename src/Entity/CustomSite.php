@@ -59,6 +59,12 @@ class CustomSite
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $skills = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $cvFile = null;
+
+    #[Vich\UploadableField(mapping: 'post_cv', fileNameProperty: 'cvFile')]
+    private $cvFileVich;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -233,5 +239,36 @@ class CustomSite
         $this->skills = $skills;
 
         return $this;
+    }
+
+    public function getCvFile(): ?string
+    {
+        return $this->cvFile;
+    }
+
+    public function setCvFile(?string $cvFile): self
+    {
+        $this->cvFile = $cvFile;
+
+        return $this;
+    }
+
+    public function setCvFileVich(File $cvFile = null)
+    {
+        $this->logoFileVich = $cvFile;
+
+        if ($cvFile) {
+            // $this->updatedAt = new \DateTimeImmutable();
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return File|null
+     */
+    public function getCvFileVich()
+    {
+        return $this->cvFileVich;
     }
 }
