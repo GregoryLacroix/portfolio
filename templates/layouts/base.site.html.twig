@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
+       <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="Content-Type" content="UTF-8">
+        <meta name="Content-Language" content="fr">
+        <meta name="Description" content="la Ondartistica est le nom de scene d'un graffeur professionel sous le pseudonyme POLONOVA">
+        <meta name="Keywords" content="Polonova, art, oeuvre, graff, graffiti, street art, art urbain, cellograff, graffeur, aérosol">
+        <meta name="Subject" content="Graffeur">
+        <meta name="Copyright" content="2021 - la Ondartistica - tous droits réservés">
+        <meta name="Author" content="Grégory LACROIX">
+        <meta name="Publisher" content="Grégory LACROIX">
+        <meta name="Identifier-Url" content="https://laondartistica.fr">
+        <meta name="Reply-To" content="contact@laondartistica.fr">
+        <meta name="Revisit-After" content="1 day">
+        <meta name="Robots" content="all">
+        <meta name="Rating" content="general">
+        <meta name="Distribution" content="global">
+        <meta name="Geography" content="Gambais">
+        <meta name="Category" content="photography">
         <title>PORTFOLIO - Grégory LACROIX</title>                               
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{{ asset('assets/favicon.ico') }}" />
@@ -27,9 +41,12 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">PORTFOLIO</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">À PROPOS</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">CONTACT</a></li>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ path('app_admin') }}">BACKOFFICE</a></li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
