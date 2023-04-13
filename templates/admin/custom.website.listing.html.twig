@@ -1,0 +1,113 @@
+{% extends 'layouts/base.admin.html.twig' %}
+
+{% block title %}BACKOFFICE | Portfolio personnalisation listing{% endblock %} 
+
+{% block body %}
+
+    {% for label, messages in app.flashes(['success', 'danger']) %}
+        {% for message in messages %}
+            <p class="col-12 col-sm-10 col-md-8 col-lg-6 alert alert-{{ label }} text-center mx-auto disparition">{{ message }}</p>
+        {% endfor %}
+    {% endfor %}
+
+    <h1 class="text-center my-5 focus-in-contract">Liste des personnalisations</h1>
+   {% for label, messages in app.flashes(['success', 'danger']) %}
+        {% for message in messages %}
+            <p class="col-12 col-sm-10 col-md-8 col-lg-6 alert alert-{{ label }} text-center mx-auto disparition">{{ message }}</p>
+        {% endfor %}
+    {% endfor %}
+
+    <div class="table-responsive">
+        <table id="gallery-admin" class="table table-striped text-center">
+            <thead>
+                <tr class="bg-secondary text-white">
+                    <th class="text-center">NAV</th>
+                    <th class="text-center">HOVER LINK NAV</th>
+                    <th class="text-center">FOOTER</th>
+                    <th class="text-center">COPYRIGHT</th>
+                    <th class="text-center">CONTENT</th>
+                    <th class="text-center">LOGO</th>
+                    <th class="text-center">PHOTO PROFIL</th>
+                    <th class="text-center">STATUT</th>
+                    <th class="text-center">EDIT</th>
+                    <th class="text-center">SUPP</th>
+                </tr>   
+            </thead>
+            <tbody id="sortable">
+            {% for custom in customs %}
+                <tr>
+                    <td align="center"><div style="background-color: {{ custom.navColor }}; width: 50px; height: 50px;"></div></td>
+                    <td align="center"><div style="background-color: {{ custom.hoverLinkColor }}; width: 50px; height: 50px;"></div></td>
+                    <td align="center"><div style="background-color: {{ custom.footerColor }}; width: 50px; height: 50px;"></div></td>
+                    <td align="center"><div style="background-color: {{ custom.copyrightColor }}; width: 50px; height: 50px;"></div></td>
+                    <td align="center"><div style="background-color: {{ custom.contentColor }}; width: 50px; height: 50px;"></div></td>
+                    <td align="center"><img src="{{ asset('uploads/logos/' ~ custom.logoFile) }}" alt="logo"></td>
+                    <td align="center"><img src="{{ asset('uploads/photos/' ~ custom.photoFile) }}" alt="logo" style="width:100px;"></td>
+                    <td>
+                        <div class="form-check form-switch d-flex justify-content-center align-items-center block-isActive">
+                            <input class="form-check-input isActive" type="checkbox" role="switch" id="isActive" name="isActive" value="{{ custom.id }}" {% if custom.isActive == true %}checked{% endif %}>
+                        </div>
+                    </td>
+                    <td class="text-center">
+                        {# <a href="" class="btn btn-secondary"><i class="fas fa-edit"></i></a> #}
+                        <a href="{{ path('app_custom_edit', {'id': custom.id}) }}" class="btn btn-secondary"><i class="fas fa-edit"></i></a>
+                    </td>
+                    <td class="text-center">
+                        {# <a href="{{ path('gallery_admin_remove', {'id': data.id}) }}" class="btn btn-danger" onclick="return confirm('Etes-vous sur de vouloir supprimer cette biographie ?');"> #}
+                        <a href="" class="btn btn-danger" onclick="return confirm('Etes-vous sur de vouloir supprimer cette biographie ?');">
+                        <i class="fas fa-trash-alt"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </table>
+    </div>
+
+    {% block javascripts %}
+
+        <script src="{{ asset('JS/lightbox.js') }}"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <script>
+
+        $(document).ready(function() { 
+            $(".isActive").on('change', function() {
+                if($(this).is(':checked')){
+                    var param = {
+                        id: $(this).val(),
+                        statut: 1,
+                        category: 'custom'
+                    }
+                }
+                else{
+                    var param = {
+                        id: $(this).val(),
+                        statut: 0,
+                        category: 'custom'
+                    }
+                }
+
+                $.ajax({
+
+                    method: "POST",
+                    url: "{{ path('admin_ajax_statut') }}",
+                    data: {parameters: param},
+                    dataType: 'json',  
+                    async: true,  
+                    success: function(reponse){
+                        console.log(reponse);
+                    },  
+                    error : function(xhr, textStatus, errorThrown) {  
+                        alert('Ajax request failed.');  
+                    } 
+                });
+            });
+        });
+
+        </script>
+        
+    {% endblock %}
+
+{% endblock %}

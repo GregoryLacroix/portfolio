@@ -1,0 +1,34 @@
+{% extends 'layouts/base.admin.html.twig' %}
+
+{% block title %}BACKOFFICE | Portfolio personnalisation{% endblock %} 
+
+{% block body %}
+
+    <style>
+    .vich-image a img{
+        width: 250px;
+    }
+    </style>
+
+    {% for label, messages in app.flashes(['success', 'danger']) %}
+        {% for message in messages %}
+            <p class="col-12 col-sm-10 col-md-8 col-lg-6 alert alert-{{ label }} text-center mx-auto disparition">{{ message }}</p>
+        {% endfor %}
+    {% endfor %}
+
+    <h1 class="text-center my-5 focus-in-contract">Personnaliser le portfolio</h1>
+    <div class="col-12 col-sm-10 col-md-7 col-lg-5 col-xl-5 mx-auto mb-5">
+    {{ form_start(customForm) }}
+        {{ form_row(customForm.navColor) }}
+        {{ form_row(customForm.footerColor) }}
+        {{ form_row(customForm.copyrightColor) }}
+        {{ form_row(customForm.contentColor) }}
+        {{ form_row(customForm.hoverLinkColor) }}
+        {{ form_row(customForm.logoFileVich) }}
+        {{ form_row(customForm.photoFileVich) }}
+
+        <button type="submit" class="btn btn-dark">Enregistrer</button>
+    {{ form_end(customForm) }}
+    </div>
+
+{% endblock %}
