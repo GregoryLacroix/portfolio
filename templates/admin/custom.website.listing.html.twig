@@ -33,6 +33,7 @@
                     <th class="text-center">COPYRIGHT</th>
                     <th class="text-center">CONTENT</th>
                     <th class="text-center">COMPÉTENCES</th>
+                    <th class="text-center">CV</th>
                     <th class="text-center">LOGO</th>
                     <th class="text-center">PHOTO PROFIL</th>
                     <th class="text-center">STATUT</th>
@@ -49,6 +50,8 @@
                     <td align="center"><div style="background-color: {{ custom.copyrightColor }}; width: 50px; height: 50px;"></div></td>
                     <td align="center"><div style="background-color: {{ custom.contentColor }}; width: 50px; height: 50px;"></div></td>
                     <td align="center">{{ custom.skills }}</td>
+                    {# <td align="center"><img src="{{ asset('uploads/cv/' ~ custom.cvFile) }}" alt=""></td> #}
+                    <td align="center"><a href="{{ asset('uploads/cv/' ~ custom.cvFile) }}" target="_blank"><img src="{{ asset('images/icone-gif/cv.png/') }}" style="width: 70px;" alt=""></a></td>
                     <td align="center"><img src="{{ asset('uploads/logos/' ~ custom.logoFile) }}" alt="logo"></td>
                     <td align="center"><img src="{{ asset('uploads/photos/' ~ custom.photoFile) }}" alt="logo" style="width:100px;"></td>
                     <td>

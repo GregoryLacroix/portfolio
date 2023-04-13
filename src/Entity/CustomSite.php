@@ -135,7 +135,7 @@ class CustomSite
         $this->logoFileVich = $logoFile;
 
         if ($logoFile) {
-            // $this->updatedAt = new \DateTimeImmutable();
+            $this->updatedAt = new \DateTimeImmutable();
         }
 
         return $this;
@@ -255,10 +255,10 @@ class CustomSite
 
     public function setCvFileVich(File $cvFile = null)
     {
-        $this->logoFileVich = $cvFile;
+        $this->cvFileVich = $cvFile;
 
         if ($cvFile) {
-            // $this->updatedAt = new \DateTimeImmutable();
+            $this->updatedAt = new \DateTimeImmutable();
         }
 
         return $this;
