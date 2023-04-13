@@ -56,6 +56,9 @@ class CustomSite
     #[ORM\Column(nullable: true)]
     private ?bool $isActive = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $skills = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -216,6 +219,18 @@ class CustomSite
     public function setIsActive(?bool $isActive): self
     {
         $this->isActive = $isActive;
+
+        return $this;
+    }
+
+    public function getSkills(): ?string
+    {
+        return $this->skills;
+    }
+
+    public function setSkills(?string $skills): self
+    {
+        $this->skills = $skills;
 
         return $this;
     }

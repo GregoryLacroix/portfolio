@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ColorType;
 
 class CustomFormType extends AbstractType
@@ -16,6 +17,9 @@ class CustomFormType extends AbstractType
         $builder
             ->add('navColor', ColorType::class, [
                 'label' => 'Couleur de fond de la navigation'
+            ])
+            ->add('skills', TextType::class, [
+                'label' => 'Compétences'
             ])
             ->add('footerColor', ColorType::class, [
                 'label' => 'Couleur de fond du pied de page'
