@@ -114,7 +114,7 @@ class AdminController extends AbstractController
 
             $this->addFlash('success', "Les données ont été $txt avec succès.");
 
-            return $this->redirectToRoute('app_custom_listing');
+            return $this->redirectToRoute('app_custom_portfolio');
         }
 
         return $this->render('admin/custom.portfolio.add.html.twig', [
