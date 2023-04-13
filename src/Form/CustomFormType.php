@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\CustomSite;
 use Symfony\Component\Form\AbstractType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -22,7 +23,7 @@ class CustomFormType extends AbstractType
             ->add('skills', TextType::class, [
                 'label' => 'Compétences'
             ])
-            ->add('about', TextareaType::class, [
+            ->add('about', CKEditorType::class, [
                 'label' => 'À propos de vous',
                 'attr' => [
                     'rows' => 7
