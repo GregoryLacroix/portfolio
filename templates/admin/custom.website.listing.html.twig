@@ -4,6 +4,12 @@
 
 {% block body %}
 
+    <style>
+    .block-isActive{
+        margin-top: 0 !important;
+    }
+    </style>
+
     {% for label, messages in app.flashes(['success', 'danger']) %}
         {% for message in messages %}
             <p class="col-12 col-sm-10 col-md-8 col-lg-6 alert alert-{{ label }} text-center mx-auto disparition">{{ message }}</p>
@@ -49,7 +55,6 @@
                         </div>
                     </td>
                     <td class="text-center">
-                        {# <a href="" class="btn btn-secondary"><i class="fas fa-edit"></i></a> #}
                         <a href="{{ path('app_custom_edit', {'id': custom.id}) }}" class="btn btn-secondary"><i class="fas fa-edit"></i></a>
                     </td>
                     <td class="text-center">
