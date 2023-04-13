@@ -13,7 +13,7 @@
     {% for label, messages in app.flashes(['success', 'danger']) %}
         {% for message in messages %}
             <p class="col-12 col-sm-10 col-md-8 col-lg-6 alert alert-{{ label }} text-center mx-auto disparition">{{ message }}</p>
-        {% endfor %}
+        {% endfor %}        
     {% endfor %}
 
     <h1 class="text-center my-5 focus-in-contract">Personnaliser le portfolio</h1>
