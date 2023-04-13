@@ -54,7 +54,7 @@
                     <td align="center"><a href="{{ asset('uploads/cv/' ~ custom.cvFile) }}" target="_blank"><img src="{{ asset('images/icone-gif/cv.png/') }}" style="width: 70px;" alt=""></a></td>
                     <td align="center"><img src="{{ asset('uploads/logos/' ~ custom.logoFile) }}" alt="logo"></td>
                     <td align="center"><img src="{{ asset('uploads/photos/' ~ custom.photoFile) }}" alt="logo" style="width:100px;"></td>
-                    <td>
+                    <td>         
                         <div class="form-check form-switch d-flex justify-content-center align-items-center block-isActive">
                             <input class="form-check-input isActive" type="checkbox" role="switch" id="isActive" name="isActive" value="{{ custom.id }}" {% if custom.isActive == true %}checked{% endif %}>
                         </div>
