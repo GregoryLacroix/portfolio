@@ -90,4 +90,11 @@ class AdminController extends AbstractController
             return new JsonResponse($search);
         }
     }
+
+    #[Route('/admin/custom-portfolio/add', name: 'app_custom_portfolio_add')]
+    public function customPortfolio(Request $request): Response
+    {
+        return $this->render('admin/custom.portfolio.add.html.twig', [
+        ]);
+    }
 }
