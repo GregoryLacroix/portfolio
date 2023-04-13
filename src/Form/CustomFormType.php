@@ -9,6 +9,7 @@ use Vich\UploaderBundle\Form\Type\VichImageType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ColorType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class CustomFormType extends AbstractType
 {
@@ -20,6 +21,12 @@ class CustomFormType extends AbstractType
             ])
             ->add('skills', TextType::class, [
                 'label' => 'Compétences'
+            ])
+            ->add('about', TextareaType::class, [
+                'label' => 'À propos de vous',
+                'attr' => [
+                    'rows' => 7
+                ]
             ])
             ->add('footerColor', ColorType::class, [
                 'label' => 'Couleur de fond du pied de page'

@@ -65,6 +65,9 @@ class CustomSite
     #[Vich\UploadableField(mapping: 'post_cv', fileNameProperty: 'cvFile')]
     private $cvFileVich;
 
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $about = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -270,5 +273,17 @@ class CustomSite
     public function getCvFileVich()
     {
         return $this->cvFileVich;
+    }
+
+    public function getAbout(): ?string
+    {
+        return $this->about;
+    }
+
+    public function setAbout(?string $about): self
+    {
+        $this->about = $about;
+
+        return $this;
     }
 }
