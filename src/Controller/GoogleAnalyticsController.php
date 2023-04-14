@@ -41,7 +41,7 @@ class GoogleAnalyticsController extends AbstractController
         
         if ($accounts->getItems() && count($accounts->getItems()) > 0) {
             $items = $accounts->getItems();
-            $firstAccountId = $items[1]->getId();
+            $firstAccountId = $items[0]->getId();
             // dd($firstAccountId);
             
             // Récupère la liste des propriétés
