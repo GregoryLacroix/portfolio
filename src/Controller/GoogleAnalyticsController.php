@@ -158,7 +158,7 @@ class GoogleAnalyticsController extends AbstractController
             'js_array' => $js_array,
             'totalsForAllResults' => $results->getTotalsForAllResults()
             // 'error' => $error??null
-        ]);
+        ]);        
     }
 
 }
