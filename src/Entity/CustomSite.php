@@ -71,6 +71,15 @@ class CustomSite
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $location = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $linkFacebook = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $linkTwitter = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $linkLinkedin = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -298,6 +307,42 @@ class CustomSite
     public function setLocation(?string $location): self
     {
         $this->location = $location;
+
+        return $this;
+    }
+
+    public function getLinkFacebook(): ?string
+    {
+        return $this->linkFacebook;
+    }
+
+    public function setLinkFacebook(?string $linkFacebook): self
+    {
+        $this->linkFacebook = $linkFacebook;
+
+        return $this;
+    }
+
+    public function getLinkTwitter(): ?string
+    {
+        return $this->linkTwitter;
+    }
+
+    public function setLinkTwitter(?string $linkTwitter): self
+    {
+        $this->linkTwitter = $linkTwitter;
+
+        return $this;
+    }
+
+    public function getLinkLinkedin(): ?string
+    {
+        return $this->linkLinkedin;
+    }
+
+    public function setLinkLinkedin(?string $linkLinkedin): self
+    {
+        $this->linkLinkedin = $linkLinkedin;
 
         return $this;
     }

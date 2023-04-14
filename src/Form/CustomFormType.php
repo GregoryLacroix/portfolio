@@ -23,6 +23,15 @@ class CustomFormType extends AbstractType
             ->add('skills', TextType::class, [
                 'label' => 'Compétences'
             ])
+            ->add('linkFacebook', TextType::class, [
+                'label' => 'Facebook'
+            ])
+            ->add('linkTwitter', TextType::class, [
+                'label' => 'Twitter'
+            ])
+            ->add('linkLinkedin', TextType::class, [
+                'label' => 'Linkedin'
+            ])
             ->add('about', CKEditorType::class, [
                 'label' => 'À propos de vous',
                 'attr' => [
