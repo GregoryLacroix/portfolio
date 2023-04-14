@@ -30,7 +30,7 @@ class ServiceMailer
             $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             //Recipients
-            $mail->setFrom($options['to'], 'Grégory LACROIX Portfolio');    
+            $mail->setFrom($options['to'], 'GLX');    
             //$mail->addAddress($options['setFrom']);     //Add a recipient
             //$mail->addAddress('ellen@example.com');               //Name is optional
             $mail->addReplyTo($options['setFrom']);               
