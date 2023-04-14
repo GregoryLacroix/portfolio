@@ -38,7 +38,7 @@ class AdminController extends AbstractController
         $customForm = $this->createForm(CustomFormType::class, $custom);
         $customForm->handleRequest($request);
 
-        dump($request);
+        //dump($request);
 
         if($customForm->isSubmitted() && $customForm->isValid()){
 
@@ -126,7 +126,7 @@ class AdminController extends AbstractController
     public function customPortfolio(Request $request): Response
     {
         $portfolios = $this->em->getRepository(Portfolio::class)->findAll();
-        dump($portfolios);
+        //dump($portfolios);
 
         return $this->render('admin/custom.portfolio.listing.html.twig', [
             'portfolios' => $portfolios
