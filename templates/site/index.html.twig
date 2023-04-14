@@ -466,14 +466,41 @@
                 </div>
             </div>
         </div>
-        <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
         <script src="{{ asset('js/scripts.js') }}"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+        <script>
+        $(document).ready(function () {         
+            $('#submitButton').on('click', function(){
+                var contact = $('#name').val();
+                var email = $('#email').val();
+                var phone = $('#phone').val();
+                var message = $('#message').val();
+
+                var param = {
+                    contact: contact,
+                    email: email,
+                    phone: phone,
+                    message: message
+                }
+                console.log(param);
+
+                $.ajax({
+                    method: "POST",
+                    url: "{{ path('app_ajax_contact') }}",
+                    data: {parameters: param},
+                    dataType: 'json',  
+                    async: true,  
+                    success: function(reponse){
+                        console.log(reponse);
+                    },  
+                    error : function(xhr, textStatus, errorThrown) {  
+                        //alert('Ajax request failed.');  
+                    } 
+                });
+            });
+        })
+        </script>
     </body>
 </html>
