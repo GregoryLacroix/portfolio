@@ -30,7 +30,7 @@ class CustomFormType extends AbstractType
                 'label' => 'Twitter'
             ])
             ->add('linkLinkedin', TextType::class, [
-                'label' => 'Linkedin'
+                'label' => 'Linkedin'   
             ])
             ->add('about', CKEditorType::class, [
                 'label' => 'À propos de vous',
