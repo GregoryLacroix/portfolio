@@ -1,0 +1,103 @@
+{% extends "layouts/base.admin.html.twig" %}
+
+    {% block title %}
+
+        Backoffice | GOOGLE ANALYTICS
+        
+    {% endblock %}
+
+{% block body %}
+
+    <style>
+    #visites{
+        font-family: 'Urbanist', sans-serif !important;
+    }
+    </style>
+
+    {% for label, messages in app.flashes(['success', 'danger']) %}
+        {% for message in messages %}
+            <p class="col-12 col-sm-10 col-md-8 col-lg-6 alert alert-{{ label }} text-center mx-auto disparition">{{ message }}</p>
+        {% endfor %}
+    {% endfor %}
+
+    <h2 class="text-center my-5 focus-in-contract">GOOGLE ANALYTICS</h2>
+
+	<div class="d-flex justify-content-between mb-4">
+		<div class="border rounded pb-2 d-flex flex-column align-items-center justify-content-center" style="width: 32%;">
+			<h5 class="col-12 text-center py-2 bg-light">Nombre de pages vue</h5>
+			<hr class="m-0 p-0">
+			<h5 class="mb-0">{{ totalsForAllResults['ga:pageviews'] }}</h5>
+		</div>
+		<div class="border rounded pb-2 d-flex flex-column align-items-center justify-content-center" style="width: 32%;">
+			<h5 class="col-12 text-center py-2 bg-light">Nombre de visiteurs</h5>
+			<h5 class="mb-0">{{ totalsForAllResults['ga:users'] }}</h5>
+		</div>
+		<div class="border rounded pb-2 d-flex flex-column align-items-center justify-content-center" style="width: 32%;">
+			<h5 class="col-12 text-center py-2 bg-light">Nombre de sessions</h5>
+			<h5 class="mb-0">{{ totalsForAllResults['ga:sessions'] }}</h5>
+		</div>
+	</div>
+
+	{# {% if js_array is not defined %} #}
+	<div id="visites" style="height:400px; padding:0;" class="border rounded">
+		
+	</div>
+	{# {% else %}
+		<h5 class="text-center mt-5">{{ error }}</h5>	
+	{% endif %} #}
+   
+
+{% endblock %}
+
+{% block javascripts %}
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+	google.charts.load('current', {'packages':['corechart']});
+	google.charts.setOnLoadCallback(drawChart);
+	function drawChart() {
+		// Sur la ligne ci-dessous, nous faisons un echo en php (code court) du json retourné par la fonction php buildChartArray
+		let data = google.visualization.arrayToDataTable({{ js_array|raw }});
+		// Ci-dessous les options du graphique
+		let options = {
+			curveType: 'function',
+			series: {
+				0: {targetAxisIndex:0},
+				1:{targetAxisIndex:1},
+				2:{targetAxisIndex:1}
+			},
+			hAxis : { 
+				textStyle : {
+					fontSize: 10, // or the number you want
+					fontName: 'Urbanist'
+				}
+			},
+			vAxes: {
+				0: {
+					gridlines: {color: 'transparent'},
+					textStyle : {
+						fontSize: 10, // or the number you want
+						fontName: 'Urbanist'
+					}
+				},
+				1: {
+					gridlines: {color: 'transparent'},
+					textStyle : {
+						fontSize: 10, // or the number you want
+						fontName: 'Urbanist'
+					}
+				},
+			},
+			legend: {
+				position: 'bottom',
+				textStyle : {
+					fontSize: 10, // or the number you want
+					fontName: 'Urbanist'
+				}
+			}
+		};
+		let chart = new google.visualization.LineChart(document.getElementById('visites'));
+		chart.draw(data, options);
+	}
+</script>
+
+{% endblock %}

@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="fr">
     <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-46HEZZ8L4M"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-46HEZZ8L4M');
+        </script>
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -158,6 +167,14 @@
                                 <img src="{{ asset('images/icone-gif/carnet.gif') }}" style="width: 30px !important;" alt="Google Analytics" class="me-2">
                                 <span data-feather="bar-chart-2"></span>
                                 Listing Portfolio
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark d-flex align-items-center" href="{{ path('app_google_analytics') }}">
+                                {# <i class="fas fa-chart-area"></i> #}
+                                <img src="{{ asset('images/icone-gif/graphique-en-ligne.gif') }}" style="width: 30px !important;" alt="Google Analytics" class="me-2">
+                                <span data-feather="bar-chart-2"></span>
+                                Google Analytics
                                 </a>
                             </li>
                             <li class="nav-item">

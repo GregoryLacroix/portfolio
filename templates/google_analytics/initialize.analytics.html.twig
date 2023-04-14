@@ -1,0 +1,36 @@
+{% extends "base_admin.html.twig" %}
+
+    {% block title %}
+        Backoffice | Personnalisation du site
+    {% endblock %}
+
+{% block body %}
+
+    <style>
+    .vich-image a img{
+        height: auto !important;
+        margin-bottom: 10px !important;
+        width: 100%;
+    }
+    </style>
+
+    {% for label, messages in app.flashes(['success', 'danger']) %}
+        {% for message in messages %}
+            <p class="col-12 col-sm-10 col-md-8 col-lg-6 alert alert-{{ label }} text-center mx-auto disparition">{{ message }}</p>
+        {% endfor %}
+    {% endfor %}
+
+    <h2 class="text-center my-5 focus-in-contract">INITIALIZE GOOGLE ANALYTICS</h2>
+
+    {% block javascripts %}
+
+        <script src="{{ asset('JS/lightbox.js') }}"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <script>
+        
+        </script>
+
+    {% endblock %}
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "laondartistica",
+  "private_key_id": "4cea8c28aaa76e550f6d9e0fc6af0247a1c50be2",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQD4G0UXPZbBDh69\n75HXQc2YDhJvVXvFmViH+glk+DQxFKfhROhQzTsCEEfwjg1t5l55nVXg4KNDpYEv\npbhbsYeV3gvhl+SjEjS1uzMXCeNq1RExUdraPZ/RaMv371JZN6qp752fKWJBxx6L\nAS5blALFBeXNH9pbZ/91MDv0mggCjzbNvCi0Rq7yZbom35LkVpTywgzu04SxZJE7\nti//A3ItDQAZD8ZyAlmZFW7CkkOacgu7pVDNWOnqfoPTv1afmeFT2Eru4GLwpWQg\n6LKxHvusuGZgQw3lmXe190EWMYnkBB9WIAfRg9ML3w+pgmf01Gg8rCGjTpf9Q13H\n636e2gNvAgMBAAECggEAW75pvABQQK8h+wYdncV9at65PmYT0Ku1qwJwet+1HPkQ\nYyKB7W8WhNrUX0WH/b2T7dCaMv+eH6ORs7bKB04MXwSuzArIxuwyhYjliX1klNqY\n8u3byZvD/0GLOvFKOCd3ekNau8InzT7+MlSLed2vcH+PzFwc+HPqaMEfSoGyuI7W\nRPxlVJPFLtAC0OTRscZiC4Zt4W4CWuB1DhrhBYTSNfoPPF9PFnpl5yHy0D4vwZq3\njG4LZsLGSI5dYb0CMNAVn4V0m/w4yzZBYjoZkr5AcRxZOZr/NQGq28s5YgKtQVrx\ndQWvKceOYABXn6jAoNyyzmg5Pk+wxkbw6eeC1f+g0QKBgQD+9GXcnHYy0NfcLT3a\nDIIT8c4lIznHAH3a1cDTCUGV6LCoLCWnz0+u2B1I99jEVFgdoj62l8BScV/MKYrL\nC4BFodwkLPdw5ylrp09yjb72+zOm/zv80GI4xuGw3gXKhu15oeE6BHmi0iSLDaJT\nkaE1gH/TnWx0N8zTgaPNz33d5QKBgQD5H68iZgQkzjyH3yRTNtwsz+6sEd8KesOv\nH+E3hKSk56wWG/WY9xCYW1kvop1FYxqoSElikpNcuZ1rNDR2ItrFV2aRhRNW/U3H\nqm3rpBsWoyTDNBvIuMDZgdrhW0NFHthgXVC9M1Suh4hzPgCnq5bhZ3vaWFrJWL6o\nA01IFkImwwKBgQDG82ZNehbOXqQjn3ZFoj8bWzT3S/65KMwNKYI37GAuoA7CnPih\nc6gFk4V+vFF+GydLsKDpkY+1hd0wjzZMbeQh8kW8QQ6yHuD2re/UP4JGbw4GgeOI\ny//puGDDyO2R9ip4IPeFc5qLkRqNHA2Q0vKOsoCNXKoWIrkGT4LIhuL8dQKBgQC5\njSTXvR5G/6lMFiKrLEhPxEvjs6fp2UhY7qjDvjMXdErTaN3DofmlURybg0YagVdA\nkh6+oafKv6GFUKvmdc12gMOvjWu7Ng2xsroOcfuPH9Jo5i3vkdRp7PNHOL9hAzls\nhPR3B32CRQaXt02rlP1bQ8WW+oocP9I5t8Pe9l0tGwKBgQD+nan5D0GKfVskK7kk\nwOPX7kxITl8dbSxhIZcTn/hwuKVf4yk6bWjBJ/Kg9sm3r2/R8H0hdyhftyNfIiNr\nH30DsX46uwxdqBgeK7d9/B3M/zUWxFe6FcJOQctxa1veXxxXtSfLuRWeKiIUf4sx\nZ5aA9aENZ4L52gu2ULc+lXK2qg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "laondartistica@laondartistica.iam.gserviceaccount.com",
+  "client_id": "117575073591111938368",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/laondartistica%40laondartistica.iam.gserviceaccount.com"
+}
