@@ -48,10 +48,10 @@ class SiteController extends AbstractController
     {
         $search = $request->get('parameters');
         $contact = new Contact();
-        $contact->setContact(htmlspecialchars(trim($search['contact'])));
-        $contact->setEmail(htmlspecialchars(trim($search['email'])));
-        $contact->setPhone(htmlspecialchars(trim($search['phone'])));
-        $contact->setMessage(htmlspecialchars(trim($search['message'])));
+        $contact->setContact(strip_tags(htmlspecialchars(trim($search['contact']))));
+        $contact->setEmail(strip_tags(htmlspecialchars(trim($search['email']))));
+        $contact->setPhone(strip_tags(htmlspecialchars(trim($search['phone']))));
+        $contact->setMessage(strip_tags(htmlspecialchars(trim($search['message']))));
 
         $this->em->persist($contact);
         $this->em->flush();
