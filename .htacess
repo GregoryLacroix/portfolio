@@ -1,0 +1,24 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^gregory-lacroix-pf\.com [NC]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://www.gregory-lacroix-pf.com/$1 [R,L]
+
+RewriteRule ^/(.*)$ gregory-lacroix-pf.com/$1 [R=301,L]
+
+RewriteRule ^/(.*)$ gregory-lacroix-pf.com/$1 [R=301,L]
+
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ /public/$1 [L]
+
+<IfModule mod_rewrite.c>
+    Options -MultiViews
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+    <IfModule mod_alias.c>
+        RedirectMatch 302 ^/$ /index.php/
+    </IfModule>
+</IfModule>
