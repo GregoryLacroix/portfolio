@@ -24,7 +24,7 @@
     #}
 
     <div class="mt-2">
-        <button class="btn btn-dark" type="submit">
+        <button class="btn btn-dark g-recaptcha" data-sitekey="6Lf2T6IlAAAAAGgrK0qFBRlK-M5msnYBDJ_6fdcO" data-callback='onSubmit' data-action='submit' type="submit">
             Continuer
         </button>
     </div>
@@ -33,4 +33,12 @@
         {# <a href="{{ path('app_forgot_password_request') }}">Mot de passe oublié ?</a> #}
     </div>
 </form>
+
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+function onSubmit(token) {
+    document.getElementById("submitButton").submit();
+}
+</script>
+
 {% endblock %}
