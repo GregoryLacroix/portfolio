@@ -15,12 +15,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class SiteController extends AbstractController
 {
-    const SMTP = 'node125-eu.n0c.com';
-    const USERNAME = 'contact@gregory-lacroix.fr';
+    const SMTP = 'node29-eu.n0c.com';
+    const USERNAME = 'contact@gregory-lacroix-pf.com';
     const PASSWORD = 'Turkish!28410';
     const CC = 'glx78.pf@gmail.com';
-    const BCC = 'contact@gregory-lacroix.fr';
-    const EMAILTO = 'contact@gregory-lacroix.fr';
+    const BCC = 'contact@gregory-lacroix-pf.com';
+    const EMAILTO = 'contact@gregory-lacroix-pf.com';
 
     private $em;
     public function __construct(EntityManagerInterface $em)
