@@ -85,7 +85,7 @@
   box-sizing: border-box;
 }
 
-.rc-anchor{
+.rc-anchor, .rc-anchor-normal-footer{
   display: none !important;
 }
 
