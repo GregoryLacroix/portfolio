@@ -57,6 +57,10 @@
         <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
 
         <style>
+        #mainNav .navbar-nav li.nav-item a.nav-link:hover {
+            color: {{ custom.hoverLinkColor }} !important;
+        }
+
         .bg-secondary {
             --bs-bg-opacity: 1;
             /*background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important;*/
@@ -120,9 +124,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">PORTFOLIO</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">À PROPOS</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">CONTACT</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded rotate-hor-center" href="#portfolio">
+                        <span class="rotate-hor-center">P</span><span>O</span><span>R</span><span>T</span><span>F</span><span>O</span><span>L</span><span>I</span><span>O</span>
+                        </a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded rotate-hor-center" href="#about">À PROPOS</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded rotate-hor-center" href="#contact">CONTACT</a></li>
                         {% if is_granted('ROLE_ADMIN') %}
                             <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ path('app_admin') }}">BACKOFFICE</a></li>
                         {% endif %}
