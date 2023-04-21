@@ -57,6 +57,19 @@
         <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
 
         <style>
+        .portfolio .portfolio-item .portfolio-item-caption {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all 0.2s ease-in-out;
+            opacity: 0;
+            background-color: {{ custom.hoverLinkColor }} !important;
+        }
+
+        .portfolio .portfolio-item .portfolio-item-caption:hover {
+            opacity: 0.8;
+        }
+
         #mainNav .navbar-nav li.nav-item a.nav-link:hover {
             color: {{ custom.hoverLinkColor }} !important;
         }
