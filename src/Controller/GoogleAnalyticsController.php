@@ -11,8 +11,8 @@ class GoogleAnalyticsController extends AbstractController
     private $analytics; 
     private $profile;
     private $results;
-    const URL = "https://gregory-lacroix.fr";
-    const KEY_FILE_LOCATION = __DIR__ . '/google-json/laondartistica-4cea8c28aaa7.json';
+    const URL = "https://gregory-lacroix-pf.com";
+    const KEY_FILE_LOCATION = __DIR__ . '/google-json/gregory-portfolio-51a76bbc140d.json';
 
     public function __construct(){
         $this->analytics = $this->initializeAnalytics();
