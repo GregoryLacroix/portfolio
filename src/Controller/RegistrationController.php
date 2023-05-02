@@ -45,4 +45,14 @@ class RegistrationController extends AbstractController
             'registrationForm' => $form->createView(),
         ]);
     }
+
+    #[Route('/admin-users', name: 'app_users')]
+    public function adminUsers(Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $adminUsers = $entityManager->getRepository(User::class)->findAll();
+
+        return $this->render('registration/admin.users.html.twig', [
+            'adminUsers' => $adminUsers
+        ]);
+    }
 }

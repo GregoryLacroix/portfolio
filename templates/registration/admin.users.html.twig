@@ -1,0 +1,116 @@
+{% extends 'layouts/base.admin.html.twig' %}
+
+{% block title %}BACKOFFICE | Liste administrateurs{% endblock %} 
+
+{% block body %}
+
+    <style>
+    .block-isActive{
+        margin-top: 0 !important;
+    }
+    </style>
+
+    {% for label, messages in app.flashes(['success', 'danger']) %}
+        {% for message in messages %}
+            <p class="col-12 col-sm-10 col-md-8 col-lg-6 alert alert-{{ label }} text-center mx-auto disparition">{{ message }}</p>
+        {% endfor %}
+    {% endfor %}
+
+    <h1 class="text-center my-5 focus-in-contract">Liste des administrateurs</h1>
+   {% for label, messages in app.flashes(['success', 'danger']) %}
+        {% for message in messages %}
+            <p class="col-12 col-sm-10 col-md-8 col-lg-6 alert alert-{{ label }} text-center mx-auto disparition">{{ message }}</p>
+        {% endfor %}
+    {% endfor %}
+
+    <div class="table-responsive">
+        <table id="gallery-admin" class="table table-striped text-center">
+            <thead>
+                <tr class="bg-secondary text-white">
+                    <th class="text-center">PRENOM</th>
+                    <th class="text-center">NOM</th>
+                    <th class="text-center">EMAIL</th>
+                    <th class="text-center">ROLE</th>
+                    <th class="text-center">STATUT</th>
+                </tr>   
+            </thead>
+            <tbody id="sortable">
+            {% for admin in adminUsers %}
+                {# {{ dump(portfolio) }} #}
+                <tr>
+                    <td align="center">{{ admin.firstName }}</td>
+                    <td align="center">{{ admin.lastName }}</td>
+                    <td align="center">{{ admin.email }}</td>
+                    <td align="center">
+                    {% for role in admin.roles %}
+                        {% if role != 'ROLE_USER' %}
+                            ADMIN
+                        {% endif %}
+                    {% endfor %}
+                    </td>
+                    <td>         
+                        <div class="form-check form-switch d-flex justify-content-center align-items-center block-isActive">
+                            <input class="form-check-input isActive" type="checkbox" role="switch" id="isActive" name="isActive" value="{{ admin.id }}" {% if admin.isActive == true %}checked{% endif %}>
+                        </div>
+                    </td>
+                    {# <td class="text-center">
+                        <a href="{{ path('app_custom_portfolio_edit', {'id': portfolio.id}) }}" class="btn btn-secondary"><i class="fas fa-edit"></i></a>
+                    </td>
+                    <td class="text-center">
+                        <a href="" class="btn btn-danger" onclick="return confirm('Etes-vous sur de vouloir supprimer cette biographie ?');">
+                        <i class="fas fa-trash-alt"></i></a>
+                    </td> #}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </table>
+    </div>
+
+    {% block javascripts %}
+
+        <script src="{{ asset('JS/lightbox.js') }}"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <script>
+
+        $(document).ready(function() { 
+            $(".isActive").on('change', function() {
+                if($(this).is(':checked')){
+                    var param = {
+                        id: $(this).val(),
+                        statut: 1,
+                        category: 'user'
+                    }
+                }
+                else{
+                    var param = {
+                        id: $(this).val(),
+                        statut: 0,
+                        category: 'user'
+                    }
+                }
+
+                $.ajax({
+
+                    method: "POST",
+                    url: "{{ path('admin_ajax_statut') }}",
+                    data: {parameters: param},
+                    dataType: 'json',  
+                    async: true,  
+                    success: function(reponse){
+                        console.log(reponse);
+                    },  
+                    error : function(xhr, textStatus, errorThrown) {  
+                        alert('Ajax request failed.');  
+                    } 
+                });
+            });
+        });
+
+        </script>
+        
+    {% endblock %}
+
+{% endblock %}

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\CustomSite;
 use App\Entity\Portfolio;
+use App\Entity\User;
 use App\Form\CustomFormType;
 use App\Form\PortfolioFormType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -79,8 +80,10 @@ class AdminController extends AbstractController
             $repository = $this->em->getRepository(CustomSite::class);
         elseif($search['category'] == 'portfolio')
             $repository = $this->em->getRepository(Portfolio::class);
+        elseif($search['category'] == 'user')
+            $repository = $this->em->getRepository(User::class);
 
-        $data = $repository->find($search['id']);
+        $data = $repository->find($search['id']);   
 
         if ($search['statut'] == 1)
             $data->setIsActive(1);
