@@ -2,11 +2,13 @@
 
 namespace App\Controller;
 
-use App\Entity\CustomSite;
-use App\Entity\Portfolio;
 use App\Entity\User;
+use App\Entity\Contact;
+use App\Entity\Portfolio;
+use App\Entity\CustomSite;
 use App\Form\CustomFormType;
 use App\Form\PortfolioFormType;
+use App\Repository\ContactRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -133,6 +135,33 @@ class AdminController extends AbstractController
 
         return $this->render('admin/custom.portfolio.listing.html.twig', [
             'portfolios' => $portfolios
+        ]);
+    }
+
+    #[Route('/messages_admin', name:'messages_admin')]
+    #[Route('/contact/{id}/remove', name:'removeContact')]
+    public function messages(Request $request, Contact $removeContact = null, ContactRepository $repoContact, EntityManagerInterface $manager): Response
+    {
+        if($removeContact){
+            $manager->remove($removeContact);
+            $manager->flush();
+            $this->addFlash('success', "Le message a bien été supprimé !");
+
+            return $this->redirectToRoute('messages_admin');
+        }
+
+        $messages = $repoContact->findAll();//pagination
+        
+        // $contacts = $paginator->paginate(
+        //     $message, //requête contenant les données à paginer (ici nos messages)
+        //     $request->query->getInt('page', 1), //numéro de la page en cours, passé dans l'URL, 1 si aucune page
+        //     10 //résultat par page
+        // );
+
+        return $this->render('admin/admin.messages.html.twig',[
+            // 'contacts' => $contacts,
+            // 'colonnes' => $colonnes
+            'messages' => $messages
         ]);
     }
 }

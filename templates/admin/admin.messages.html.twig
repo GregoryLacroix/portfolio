@@ -1,0 +1,104 @@
+{% extends 'layouts/base.admin.html.twig' %}
+
+{% block title %}BACKOFFICE | Messages{% endblock %} 
+
+{% block body %}
+
+    <style>
+    .block-isActive{
+        margin-top: 0 !important;
+    }
+    </style>
+
+    {% for label, messages in app.flashes(['success', 'danger']) %}
+        {% for message in messages %}
+            <p class="col-12 col-sm-10 col-md-8 col-lg-6 alert alert-{{ label }} text-center mx-auto disparition">{{ message }}</p>
+        {% endfor %}
+    {% endfor %}
+
+    <h1 class="text-center my-5 focus-in-contract">Messages</h1>
+   {% for label, messages in app.flashes(['success', 'danger']) %}
+        {% for message in messages %}
+            <p class="col-12 col-sm-10 col-md-8 col-lg-6 alert alert-{{ label }} text-center mx-auto disparition">{{ message }}</p>
+        {% endfor %}
+    {% endfor %}
+
+    <div class="table-responsive">
+        <table id="gallery-admin" class="table table-striped text-center">
+            <thead>
+                <tr class="bg-secondary text-white">
+                    <th class="text-center">CONTACT</th>
+                    <th class="text-center">EMAIL</th>
+                    <th class="text-center">TELEPHONE</th>
+                    <th class="text-center">MESSAGE</th>
+                    <th class="text-center">ENVOYE LE</th>
+                    <th class="text-center">SUPP</th>
+                </tr>   
+            </thead>
+            <tbody id="sortable">
+            {% for message in messages %}
+                {# {{ dump(portfolio) }} #}
+                <tr>
+                    <td align="center">{{ message.contact }}</td>
+                    <td align="center">{{ message.email }}</td>
+                    <td align="center">{{ message.phone }}</td>
+                    <td align="center">{{ message.message }}</td>
+                    <td align="center">{{ message.createdAt|date('d/m/Y à H:i:s') }}</td>
+                    <td class="text-center">
+                        <a href="{{ path('removeContact', {'id': message.id}) }}" class="btn btn-danger" onclick="return confirm('Etes-vous sur de vouloir supprimer ce message ?');">
+                        <i class="fas fa-trash-alt"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </table>
+    </div>
+
+    {% block javascripts %}
+
+        <script src="{{ asset('JS/lightbox.js') }}"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <script>
+
+        $(document).ready(function() { 
+            $(".isActive").on('change', function() {
+                if($(this).is(':checked')){
+                    var param = {
+                        id: $(this).val(),
+                        statut: 1,
+                        category: 'portfolio'
+                    }
+                }
+                else{
+                    var param = {
+                        id: $(this).val(),
+                        statut: 0,
+                        category: 'portfolio'
+                    }
+                }
+
+                $.ajax({
+
+                    method: "POST",
+                    url: "{{ path('admin_ajax_statut') }}",
+                    data: {parameters: param},
+                    dataType: 'json',  
+                    async: true,  
+                    success: function(reponse){
+                        console.log(reponse);
+                    },  
+                    error : function(xhr, textStatus, errorThrown) {  
+                        alert('Ajax request failed.');  
+                    } 
+                });
+            });
+        });
+
+        </script>
+        
+    {% endblock %}
+
+{% endblock %}
