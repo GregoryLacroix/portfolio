@@ -8,6 +8,12 @@
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
+    {% if app.session.get('statutInactif') is not null %}
+        <div class="col-12 text-center mx-auto mt-3 alert alert-danger disparition">
+        {{ app.session.get('statutInactif')  }}
+        </div>
+    {% endif %}
+
 
     <h1 class="text-center my-5 focus-in-contract">Accès au BACKOFFICE</h1>
 

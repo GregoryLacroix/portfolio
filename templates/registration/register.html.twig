@@ -13,6 +13,8 @@
     <h1 class="text-center my-5 focus-in-contract">Créer un compte administrateur</h1>
     <div class="col-12 col-sm-10 col-md-7 col-lg-5 col-xl-5 mx-auto">
         {{ form_start(registrationForm) }}
+            {{ form_row(registrationForm.firstName) }}
+            {{ form_row(registrationForm.lastName) }}
             {{ form_row(registrationForm.email) }}
             {{ form_row(registrationForm.password, {
                 label: 'Mot de passe'
