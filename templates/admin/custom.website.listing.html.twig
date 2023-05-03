@@ -8,6 +8,18 @@
     .block-isActive{
         margin-top: 0 !important;
     }
+
+    #gallery-admin_filter{
+        margin-bottom: 10px !important;
+    }
+
+    .table-responsive{
+        overflow-x: hidden;
+    }
+
+    #gallery-admin_length{
+        margin-top: 5px !important;
+    }
     </style>
 
     {% for label, messages in app.flashes(['success', 'danger']) %}
@@ -113,6 +125,13 @@
                         alert('Ajax request failed.');  
                     } 
                 });
+            });
+
+            var table = new DataTable('#gallery-admin', {
+                destroy: true,
+                language: {
+                    url: '{{ asset("datatable/french.json") }}',
+                },
             });
         });
 
