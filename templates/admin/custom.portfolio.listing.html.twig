@@ -40,7 +40,7 @@
                     <th class="text-center">SUPP</th>
                 </tr>   
             </thead>
-            <tbody id="sortable">
+            <tbody>
             {% for portfolio in portfolios %}
                 {# {{ dump(portfolio) }} #}
                 <tr>
@@ -109,10 +109,13 @@
             });
 
             var table = new DataTable('#gallery-admin', {
+                destroy: true,
                 language: {
-                    url: 'https://cdn.datatables.net/plug-ins/1.13.4/i18n/fr-FR.json',
+                    url: '{{ asset("datatable/french.json") }}',
                 },
             });
+
+            
         });
 
         </script>
