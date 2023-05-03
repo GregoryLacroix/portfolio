@@ -42,7 +42,7 @@
                 <tr>
                     <td align="center">{{ portfolio.title }}</td>
                     <td align="center">{{ portfolio.description }}</td>
-                    <td align="center">{{ portfolio.url }}</td>
+                    <td align="center"><a href="{{ portfolio.url }}" target="_blank">{{ portfolio.url }}</a></td>
                     <td align="center"><img src="{{ asset('uploads/screenshots/' ~ portfolio.screenshotFile) }}" alt="screenshotFile" style="width: 150px;"></td>
                     <td>         
                         <div class="form-check form-switch d-flex justify-content-center align-items-center block-isActive">
