@@ -8,6 +8,10 @@
     .block-isActive{
         margin-top: 0 !important;
     }
+
+    #gallery-admin_filter{
+        margin-bottom: 10px !important;
+    }
     </style>
 
     {% for label, messages in app.flashes(['success', 'danger']) %}
@@ -102,6 +106,12 @@
                         alert('Ajax request failed.');  
                     } 
                 });
+            });
+
+            var table = new DataTable('#gallery-admin', {
+                language: {
+                    url: 'https://cdn.datatables.net/plug-ins/1.13.4/i18n/fr-FR.json',
+                },
             });
         });
 
