@@ -80,6 +80,9 @@ class CustomSite
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $linkLinkedin = null;
 
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $legaleNotice = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -343,6 +346,18 @@ class CustomSite
     public function setLinkLinkedin(?string $linkLinkedin): self
     {
         $this->linkLinkedin = $linkLinkedin;
+
+        return $this;
+    }
+
+    public function getLegaleNotice(): ?string
+    {
+        return $this->legaleNotice;
+    }
+
+    public function setLegaleNotice(?string $legaleNotice): self
+    {
+        $this->legaleNotice = $legaleNotice;
 
         return $this;
     }

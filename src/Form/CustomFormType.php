@@ -44,6 +44,12 @@ class CustomFormType extends AbstractType
                     'rows' => 10
                 ]
             ])
+            ->add('legaleNotice', CKEditorType::class, [
+                'label' => 'Mentions légales',
+                'attr' => [
+                    'rows' => 10
+                ]
+            ])
             ->add('footerColor', ColorType::class, [
                 'label' => 'Couleur de fond du pied de page'
             ])

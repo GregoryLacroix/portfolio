@@ -71,4 +71,19 @@ class SiteController extends AbstractController
 
         return new JsonResponse();
     }
+
+    #[Route('/mentions-légales', name: 'app_mentions')]
+    public function siteMentions(): Response
+    {
+        $custom = $this->em->getRepository(CustomSite::class)->findOneBy(['isActive' => 1]);
+        // dd($custom);
+
+        // $websites = $this->em->getRepository(Portfolio::class)->findBy(['isActive' => 1]);
+        // dd($websites);
+
+        return $this->render('site/mentions.html.twig', [
+            'custom' => $custom,
+            // 'websites' => $websites
+        ]);
+    }
 }
