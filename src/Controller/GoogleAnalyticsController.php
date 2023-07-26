@@ -47,6 +47,7 @@ class GoogleAnalyticsController extends AbstractController
             // Récupère la liste des propriétés
             $properties = $this->analytics->management_webproperties
             ->listManagementWebproperties($firstAccountId);
+            dump($properties->getItems());
             
             if (count($properties->getItems()) > 0) {
                 $items = $properties->getItems();
