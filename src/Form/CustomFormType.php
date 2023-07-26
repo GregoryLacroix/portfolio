@@ -20,6 +20,9 @@ class CustomFormType extends AbstractType
             ->add('navColor', ColorType::class, [
                 'label' => 'Couleur de fond de la navigation'
             ])
+            ->add('avatarColor', ColorType::class, [
+                'label' => 'Couleur de fond avatar'
+            ])
             ->add('skills', TextType::class, [
                 'label' => 'Compétences'
             ])

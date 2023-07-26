@@ -83,6 +83,9 @@ class CustomSite
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $legaleNotice = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $avatarColor = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -358,6 +361,18 @@ class CustomSite
     public function setLegaleNotice(?string $legaleNotice): self
     {
         $this->legaleNotice = $legaleNotice;
+
+        return $this;
+    }
+
+    public function getAvatarColor(): ?string
+    {
+        return $this->avatarColor;
+    }
+
+    public function setAvatarColor(?string $avatarColor): self
+    {
+        $this->avatarColor = $avatarColor;
 
         return $this;
     }
