@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "gregory-lacroix-pf",
+  "private_key_id": "db4e4e7508fe7a50713024cd06d06f9c214fa31a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDH/0wYz8eZLfq9\nm6FFIJl9k6KKQgX2jXcmzOvjKHowOp2D3EU+hFvv/bbzqgBgdSyP8OOCca2VpQBI\nIFGrR0P4ebeb+49ONSd0poaBlLJxHzOFp7+wp1C9NTrrVhmli1tMRX3ZLWpR4MeF\nnuylG0cceotkmv1pD8T/8oLdrWmGNgJyFF4n7s/ghwVvxQdq7PsOC0ZggC3fVC9r\nOgf1FRiMkjcKFngW3eLl9vKxBILtcUPnVPX0gSt9PhNfauvpatVxai4nx9853PUq\n7qWJ10p/pQVR+WHl6z1sFkjTMgqrdWvRvdafAN5THMGTyRqf3v1GLzspdtDglN6v\nY58jrieNAgMBAAECggEAVcX1EfMSzGw+zFDRwn7vtT67CAa23f3f6yEZzauPc92/\nrkyq2dwUPgIXE7uGO9glC3qpaEluw+4nB8fsnsOKsCcritdBp63+RPYiW7K1MPTL\nuPevq4imhO8uXL3pc+knd7eZ+KmUnpcDmxgEr+7Z+anI3JXoNsXPnGGapI354tfG\n7QSiA+Bq5La20R/BZ/ua+8hPloL0/MH4y78/hWpMpn9QaTHaHkG5gitHdcju8wQe\n/8XE4B6IW0Pf6OnHtV4u1LLWNhUTGUqzV1dr5n4LkdV5HteYkVPMsowBghWcjPKm\ni7tIBjxV+pN2hZ6zUYHC2OHZcnYwhVd7jiQPjkeW1QKBgQDk8qv+z1VCEop2WPou\nDgHLZr8UNbFjXOxjsRr5JpgwF4+feel8HjecSMeWgurx2AAhhBKJJQzRMHRQI9+D\nMZTg9wmTZSavEzFNdbJqT8xmFGxxo1gLqusB33iz7WEmFr6QcBVbCvlCoO022C0V\nJSxkE+p++zB85PbmeRXGbNAgdwKBgQDfoOlARh2aw6JgEyKEsmghdapJsecM5DeZ\nnfofS5RcVOCTBdJwMrlQVVC3loB7JJaF0kCWorPzLjEsgWD6ZBRAk6679bkj/2FW\nNW7qW2yOrT6wVU0Qvu/R1oxd7gfFsL89sLe0WmZZIpyJfk9sWlOwdimlDXYzPA52\nzJvQcOzdGwKBgQDiqq9GExch1yFmkij+t7dnHU5IP/Bjo3gWKx29VkyOMIVtKlHT\nJEeCXzva87qPvX5DsHJ5fUj3QrWlMh7z0H7JS0sbtqVZ5/KD8ea2AlMnLUlAKKve\nwVTyAcGKwZXRE+uPLKi3/mFRaenwxo27xZXxbxZWqXIT9MvM2kyIqupTeQKBgQDI\nJTz9gIN4g0VtVVLcjswxvhzVbjrLR+oXO9OjdMJozLJeA6TvNAa1RlZCqZl+HSX2\nyVFzQFVr/ViXa4f/MdkKXuLRaL/13tggDxyg9Yg4PgfQS9f4d9st5Cam3qXoIiNX\nNDWGXi4h8p9FU14ELOegFHF7PowemM6dNszxhlAIJwKBgHX4dHMARlQHLlmwlB7P\nqmwnIXEWafX0hANhOqqTJIdISRUVPIsxfynJWO02gmbTFpbMz5o9aR3Cx+WPmijM\nndXbYBN6sPmL/IviEDPJceUeVC0YoIeLvwzNVDov5prMXmzPqz5gEuZ8ePfWGobD\ng9yqTd1TlL1t7Bku5WzCkZGg\n-----END PRIVATE KEY-----\n",
+  "client_email": "portfolio@gregory-lacroix-pf.iam.gserviceaccount.com",
+  "client_id": "116603984825605171151",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/portfolio%40gregory-lacroix-pf.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
