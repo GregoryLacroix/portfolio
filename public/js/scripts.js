@@ -52,20 +52,18 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
     
-    document.addEventListener('DOMContentLoaded', event => {
-        var avatar = document.body.querySelector('.masthead-avatar');
-        // console.log(avatar);
+    var avatar = document.body.querySelector('.masthead-avatar');
+    // console.log(avatar);
 
-        avatar.addEventListener("mouseover", function() {
-            // alert('test');
-            // console.log(this);
-            this.classList.add("rotate3d");
-        });
+    avatar.addEventListener("mouseover", function() {
+        // alert('test');
+        // console.log(this);
+        this.classList.add("rotate3d");
+    });
 
-        avatar.addEventListener("mouseleave", function() {
-            // alert('test');
-            // console.log(this);
-            this.classList.remove("rotate3d");
-        });
+    avatar.addEventListener("mouseleave", function() {
+        // alert('test');
+        // console.log(this);
+        this.classList.remove("rotate3d");
     });
 });
