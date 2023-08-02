@@ -77,6 +77,12 @@ class CustomFormType extends AbstractType
                 'data_class' => null,
                 // 'mapped' => false,
             ])
+            ->add('avatar2FileVich', VichImageType::class, [ 
+                'label' => 'Photo de profil 2',
+                'required' => false,
+                'data_class' => null,
+                // 'mapped' => false,
+            ])
             ->add('cvFileVich', VichImageType::class, [ 
                 'label' => 'Télécharger votre CV',
                 'required' => false,

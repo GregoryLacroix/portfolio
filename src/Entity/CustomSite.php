@@ -42,6 +42,12 @@ class CustomSite
     #[Vich\UploadableField(mapping: 'post_photos', fileNameProperty: 'photoFile')]
     private $photoFileVich;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $avatar2 = null;
+
+    #[Vich\UploadableField(mapping: 'post_photos', fileNameProperty: 'avatar2')]
+    private $avatar2FileVich;
+
     #[Gedmo\Timestampable(on: 'create')]
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $createdAt = null;
@@ -193,6 +199,7 @@ class CustomSite
 
         return $this;
     }
+
 
     /**
      * @return File|null
@@ -375,5 +382,37 @@ class CustomSite
         $this->avatarColor = $avatarColor;
 
         return $this;
+    }
+
+    public function getAvatar2(): ?string
+    {
+        return $this->avatar2;
+    }
+
+    public function setAvatar2(?string $avatar2): self
+    {
+        $this->avatar2 = $avatar2;
+
+        return $this;
+    }
+
+    public function setAvatar2FileVich(File $avatar2 = null)
+    {
+        $this->avatar2FileVich = $avatar2;
+
+        if ($avatar2) {
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+
+        return $this;
+    }
+
+
+    /**
+     * @return File|null
+     */
+    public function getAvatar2FileVich()
+    {
+        return $this->avatar2FileVich;
     }
 }

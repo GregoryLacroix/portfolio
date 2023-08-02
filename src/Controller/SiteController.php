@@ -32,7 +32,7 @@ class SiteController extends AbstractController
     public function siteCustom(): Response
     {
         $custom = $this->em->getRepository(CustomSite::class)->findOneBy(['isActive' => 1]);
-        // dump($custom); 
+        dump($custom); 
 
         $websites = $this->em->getRepository(Portfolio::class)->findBy(['isActive' => 1]);
         //dump($websites);

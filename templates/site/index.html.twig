@@ -584,7 +584,27 @@
 
                 $('#contactForm').trigger("reset");
             });
-        })
+        });
+
+        window.addEventListener('DOMContentLoaded', event => {
+
+            var avatar = document.body.querySelector('.masthead-avatar');
+            // console.log(avatar);
+
+            avatar.addEventListener("mouseover", function() {
+                // alert('test');
+                console.log(this.src);
+                this.src = '/uploads/photos/{{ custom.avatar2 }}';
+                this.classList.add("rotate3dBis");
+            });
+
+            avatar.addEventListener("mouseleave", function() {
+                // alert('test');
+                // console.log(this);
+                this.src = '/uploads/photos/{{ custom.photoFile }}';
+                this.classList.remove("rotate3dBis");
+            });
+        });
         </script>
     </body>
 </html>
