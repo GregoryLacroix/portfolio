@@ -11158,9 +11158,10 @@ html {
 }
 
 .rotate3dBis{
-  /* transform: scale(1) !important; */
+  transform: scale(1) !important;
   cursor: pointer;
   z-index: 10000 !important;
+  overflow: hidden !important;
 }
 
 .transition{
