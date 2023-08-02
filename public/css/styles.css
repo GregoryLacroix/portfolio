@@ -11159,6 +11159,10 @@ html {
 
 .rotate3dBis{
   transform: scale(2) !important;
+  transform-origin: 2 0; 
+  -webkit-transform-origin: 2 0;
+  -ms-transform-origin: 2 0; 
+  -moz-transform-origin: 2 0;
   cursor: pointer;
   z-index: 10000 !important;
   overflow: hidden !important;
