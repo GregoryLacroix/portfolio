@@ -11162,6 +11162,7 @@ html {
   cursor: pointer;
   z-index: 10000 !important;
   overflow: hidden !important;
+  position: relative !important;
 }
 
 .transition{
