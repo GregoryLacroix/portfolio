@@ -11157,6 +11157,14 @@ html {
   align-items: center;
 }
 
+.rotate3d{
+  /* transform: rotate3d(2, -1, -1, -0.2turn) !important; */
+  transform: scale(2) !important;
+  transition: 1s ease-in-out;
+  cursor: pointer;
+  z-index: 10000 !important;
+}
+
 #mainNav {
   padding-top: 1rem;
   padding-bottom: 1rem;
