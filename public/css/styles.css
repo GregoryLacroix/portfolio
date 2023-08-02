@@ -11162,7 +11162,6 @@ html {
   cursor: pointer;
   z-index: 10000 !important;
   overflow: hidden !important;
-  position: relative !important;
 }
 
 .transition{
@@ -11255,6 +11254,7 @@ html {
 .masthead .masthead-avatar {
   width: 15rem;
   height: 100% !important;
+  position: relative !important;
 }
 
 @media (min-width: 992px) {
