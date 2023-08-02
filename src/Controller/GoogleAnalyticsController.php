@@ -28,7 +28,8 @@ class GoogleAnalyticsController extends AbstractController
         $client->setApplicationName("Hello Analytics Reporting");
         $client->setAuthConfig(self::KEY_FILE_LOCATION);
         $client->setScopes(['https://www.googleapis.com/auth/analytics.readonly']);
-        $analytics = new \Google_Service_Analytics($client);
+        // $analytics = new \Google_Service_Analytics($client);
+        $analytics = new \Google_Service_AnalyticsReporting($client);
         // dd($analytics);
         return $analytics;
     }
@@ -37,6 +38,7 @@ class GoogleAnalyticsController extends AbstractController
     public function getFirstProfilId()
     {
         // Récupère la liste des comptes
+        // dd($this->analytics);
         $accounts = $this->analytics->management_accounts->listManagementAccounts();
         
         if ($accounts->getItems() && count($accounts->getItems()) > 0) {
@@ -47,7 +49,7 @@ class GoogleAnalyticsController extends AbstractController
             // Récupère la liste des propriétés
             $properties = $this->analytics->management_webproperties
             ->listManagementWebproperties($firstAccountId);
-            // dump($properties);
+            dump($properties);
             
             if (count($properties->getItems()) > 0) {
                 $items = $properties->getItems();

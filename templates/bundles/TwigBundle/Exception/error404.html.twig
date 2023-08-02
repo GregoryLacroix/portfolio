@@ -1,0 +1,145 @@
+<html lang="fr">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9G0D1C9S9"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-L9G0D1C9S9');
+        </script>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="Content-Type" content="UTF-8">
+        <meta name="Content-Language" content="fr">
+        <meta name="Description" content="Tout d'abord, j'ai fait une reconversion professionnelle dans le domaine du web il y a 8 ans, j'ai fait une formation développeur web au centre de formation IFOCOP paris 11, j'ai obtenu un diplôme de web master. J'ai été ensuite été recruté par la société EVOGUE en tant que formateur digital, je suis intervenu dans différents centres de formation en Île-de-France (IFOCOP, WEBFORCE3, NEXT, DORANCO, pôle universitaire de la Défense...) pendant 6 ans. J'ai ensuite voulu augmenter mes compétences, j'ai donc rejoint une agence web (DATAGEST) située à Issy-les-Moulineaux en tant que concepteur développeur web, j'ai dirigé de multiples projets en tant que chef de projet. Cela m'a beaucoup apporté, et j'ai acquis de nombreuses compétences.
+        J'ai maintenant envie de partager mon expérience et mes acquis. Je souhaite de nouveau revenir dans le monde de la formation et du développement pour plusieurs raisons :
+        J'aime le contact avec les étudiants, et je suis la preuve vivante qu'il est possible, au vu de mon parcours, de réussir dans ce métier à force de travail.
+        J'aime transmettre, partager et motiver les étudiants. J'ai acquis, de mes six années d'expérience en tant que formateur, un tact et une pédagogie confirmée !
+        Et je reviens encore plus fort avec mes compétences acquises récemment. J'ai tout simplement envie d'aider des personnes qui étaient dans le même cas que moi et de le faire travailler et progresser afin qu'ils puissent trouver leur voie dans le domaine du web.">
+        <meta name="Keywords" content="éveloppeur, formateur, GLX, Grégory LACROIX, LACROIX, concepteur, webdesigner, design">
+        <meta name="Subject" content="Graffeur">
+        <meta name="Copyright" content="2023 - GLX - tous droits réservés">
+        <meta name="Author" content="Grégory LACROIX">
+        <meta name="Publisher" content="Grégory LACROIX">
+        <meta name="Identifier-Url" content="https://gregory-lacroix-pf.com">
+        <meta name="Reply-To" content="contact@gregory-lacroix-pf.com">
+        <meta name="Revisit-After" content="1 day">
+        <meta name="Robots" content="all">
+        <meta name="Rating" content="general">
+        <meta name="Distribution" content="global">
+        <meta name="Geography" content="Gambais">
+        <meta name="Category" content="photography">
+        <meta property="og:title" content="GLX" />
+        <meta property="og:description" content="Tout d'abord, j'ai fait une reconversion professionnelle dans le domaine du web il y a 8 ans, j'ai fait une formation développeur web au centre de formation IFOCOP paris 11, j'ai obtenu un diplôme de web master. J'ai été ensuite été recruté par la société EVOGUE en tant que formateur digital, je suis intervenu dans différents centres de formation en Île-de-France (IFOCOP, WEBFORCE3, NEXT, DORANCO, pôle universitaire de la Défense...) pendant 6 ans. J'ai ensuite voulu augmenter mes compétences, j'ai donc rejoint une agence web (DATAGEST) située à Issy-les-Moulineaux en tant que concepteur développeur web, j'ai dirigé de multiples projets en tant que chef de projet. Cela m'a beaucoup apporté, et j'ai acquis de nombreuses compétences.
+        J'ai maintenant envie de partager mon expérience et mes acquis. Je souhaite de nouveau revenir dans le monde de la formation et du développement web" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.gregory-lacroix-pf.com/" />
+        <meta property="og:image" content="https://www.gregory-lacroix-pf.com/images/screen.png" />
+        <meta property="og:image:width" content="640" />
+        <meta property="og:image:height" content="442" />
+
+        <title>PORTFOLIO - Grégory LACROIX</title>                               
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{{ asset('assets/ms-icon-70x70.png') }}" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
+
+        <style>
+        .portfolio .portfolio-item .portfolio-item-caption {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all 0.2s ease-in-out;
+            opacity: 0;
+            background-color: {{ custom.hoverLinkColor }} !important;
+        }
+
+        .portfolio .portfolio-item .portfolio-item-caption:hover {
+            opacity: 0.8;
+        }
+
+        #mainNav .navbar-nav li.nav-item a.nav-link:hover {
+            color: {{ custom.hoverLinkColor }} !important;
+        }
+
+        .bg-secondary {
+            --bs-bg-opacity: 1;
+            /*background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important;*/
+            background-color: {{ custom.navColor }} !important;
+        }
+
+        .bg-primary {
+            --bs-bg-opacity: 1;
+            /*background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;*/
+            background-color: {{ custom.contentColor }} !important;
+        }
+
+        #mainNav .navbar-nav > li.nav-item > a.nav-link.active {
+            color: #fff;
+            background: {{ custom.hoverLinkColor }};
+        } 
+
+        :root {
+            --bs-link-hover-color: {{ custom.hoverLinkColor }};
+        }
+
+        .footer {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+            background-color: {{ custom.footerColor }};
+            color: #fff;
+        } 
+
+        .copyright {
+            background-color: {{ custom.copyrightColor }};
+            
+        }
+
+        #mainNav .navbar-nav > li.nav-item > a.nav-link.active:active, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
+            color: #fff !important;
+            /* background: #1abc9c; */                      
+        }
+        </style>
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org/",
+            "@type": "WebSite",
+            "name": "portfolio2",
+            "url": "https://www.gregory-lacroix-pf.com/",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://www.gregory-lacroix-pf.com/{search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        }
+        </script>
+    </head>
+    <body id="page-top">
+
+        <div class="container">
+
+            <p class="text-center">
+                <img src="{{ asset('images/erreur-404.jpg') }}" alt="erreur 404 page not found" class="col-8 img-fluid">
+            </p>
+
+            <p class="text-center">    
+            La page demandée n'a pas pu être localisée.
+            </p>
+
+            <p class="text-center">
+                <a href="{{ path('app_site') }}" class="link-secondary">Retour à la page d'accueil</a> 
+            </p>
+
+        </div>
+
+    </body>
+</html>
