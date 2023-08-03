@@ -586,7 +586,7 @@
             });
         });
 
-        window.addEventListener('DOMContentLoaded', event => {
+        /*window.addEventListener('DOMContentLoaded', event => {
 
             var avatar = document.body.querySelector('.masthead-avatar');
             // console.log(avatar);
@@ -603,6 +603,19 @@
                 // console.log(this);
                 this.src = '/uploads/photos/{{ custom.photoFile }}';
                 this.classList.remove("rotate3dBis");
+            });
+        });*/
+
+        $(document).ready( function() {
+            $('.masthead-avatar').hover(
+                function() {
+                    console.log($('.masthead-avatar').attr('src'));
+                    $(this).animate({ 'zoom': 1.2 }, 400);
+                    $('.masthead-avatar').attr('src', '/uploads/photos/{{ custom.avatar2 }}');
+                },
+                function() {
+                    $(this).animate({ 'zoom': 1 }, 400);
+                    $('.masthead-avatar').attr('src', '/uploads/photos/{{ custom.photoFile }}');
             });
         });
         </script>
