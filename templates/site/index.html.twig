@@ -607,10 +607,14 @@
         });*/
 
         $(document).ready( function() {
+            //$('*').css('-webkit-transition','2s all');
             $('.masthead-avatar').hover(
                 function() {
-                    console.log($('.masthead-avatar').attr('src'));
-                    $(this).animate({ 'zoom': 1.2 }, 400);
+                    // console.log($('.masthead-avatar').attr('src'));
+                    $(this).animate({ 
+                        'zoom': 1.2 
+                    }, 400);
+                    //$(this).css('-webkit-transform', 'rotate3d(107, 117, 71, 397deg)')
                     $('.masthead-avatar').attr('src', '/uploads/photos/{{ custom.avatar2 }}');
                 },
                 function() {
