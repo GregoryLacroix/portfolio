@@ -11157,7 +11157,7 @@ html {
   align-items: center;
 }
 
-.rotate3dBis{
+/* .rotate3dBis{
   transform: scale(2) !important;
   transform-origin: 2 0; 
   -webkit-transform-origin: 2 0;
@@ -11167,6 +11167,10 @@ html {
   z-index: 10000 !important;
   overflow: hidden !important;
   position: relative !important;
+} */
+
+.rotate3dBis:hover{
+  cursor: pointer;
 }
 
 .transition{
