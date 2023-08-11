@@ -31,8 +31,18 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/admin/custom-portfolio-listing, roles: ROLE_ADMIN }
+        - { path: ^/register, roles: ROLE_ADMIN }
+        - { path: ^/admin-users, roles: ROLE_ADMIN }
+        - { path: ^/admin/custom-website, roles: ROLE_ADMIN }
+        - { path: ^/admin/custom-website-listing, roles: ROLE_ADMIN }
+        - { path: ^/admin/custom-portfolio/add, roles: ROLE_ADMIN }
+        - { path: ^/admin/custom-portfolio-listing, roles: ROLE_ADMIN }
+        - { path: ^/admin/custom-portfolio, roles: ROLE_ADMIN }
+        - { path: ^/messages_admin, roles: ROLE_ADMIN }
+        - { path: ^/google/analytics, roles: ROLE_ADMIN }
+
+    access_denied_url: app_site
 
 when@test:
     security:
