@@ -66,6 +66,11 @@
             font-family: 'Open Sans', sans-serif;
         }
 
+        h1, h2, h3, h4, h5, h6{
+            /*font-family: 'Open Sans', sans-serif;*/
+            font-family: 'eurostileregular', sans-serif;
+        }
+
         .grecaptcha-badge { visibility: hidden; }
 
         .portfolio .portfolio-item .portfolio-item-caption {
@@ -611,15 +616,16 @@
             $('.masthead-avatar').hover(
                 function() {
                     // console.log($('.masthead-avatar').attr('src'));
-                    $(this).animate({ 
-                        'zoom': 1.2 
-                    }, 400);
-                    //$(this).css('-webkit-transform', 'rotate3d(107, 117, 71, 397deg)')
-                    $('.masthead-avatar').attr('src', '/uploads/photos/{{ custom.avatar2 }}');
+                    $(this).animate({ 'zoom': 1.2}, 400);
+                    $(this).attr('src', '/uploads/photos/{{ custom.avatar2 }}');
+                    // $(this).animate({ opacity: "0" }, 400);
+
                 },
                 function() {
                     $(this).animate({ 'zoom': 1 }, 400);
-                    $('.masthead-avatar').attr('src', '/uploads/photos/{{ custom.photoFile }}');
+                    $(this).attr('src', '/uploads/photos/{{ custom.photoFile }}');
+                    // $(this).animate({ opacity: "1" }, 400);
+
             });
         });
         </script>

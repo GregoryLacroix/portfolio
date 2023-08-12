@@ -10,6 +10,23 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+@font-face {
+  font-family: 'eurostileregular';
+  src: url('../assets/fonts/eurostile-webfont.woff2') format('woff2'),
+       url('../assets/fonts/eurostile-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'europaregular';
+  src: url('../assets/fonts/europa-webfont.woff2') format('woff2'),
+       url('../assets/fonts/europa-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
