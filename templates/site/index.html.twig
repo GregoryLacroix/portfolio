@@ -51,10 +51,13 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300&display=swap" rel="stylesheet">
+
         <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
 
         <script>
@@ -63,7 +66,10 @@
 
         <style>
         body{
-            font-family: 'Open Sans', sans-serif;
+            /*font-family: 'europa', sans-serif;*/
+            /*font-family: 'Montserrat', sans-serif;*/   
+            /* font-family: 'Raleway', sans-serif; */   
+            font-family: 'DM Sans', sans-serif;
         }
 
         h1, h2, h3, h4, h5, h6{
@@ -103,7 +109,7 @@
         }
 
         #mainNav .navbar-nav > li.nav-item > a.nav-link.active {
-            color: #fff;
+            color: #fff !important;
             background: {{ custom.hoverLinkColor }};
         } 
 
@@ -127,6 +133,7 @@
             color: #fff !important;
             /* background: #1abc9c; */                      
         }
+
         </style>
 
         <script type="application/ld+json">
@@ -151,20 +158,20 @@
                 {# {% set siteCustom = controller('App\\Controller\\SiteController::siteCustom') %}
                 {{ dump(siteCustom) }} #}
 
-                <a class="navbar-brand rounded-circle bg-white p-3" href="#page-top"><img src="{{ asset('uploads/logos/' ~ custom.logoFile) }}" alt="" style="width: 70px;"></a>
+                <a class="navbar-brand rounded-circle bg-white" href="#page-top"><img src="{{ asset('uploads/logos/' ~ custom.logoFile) }}" alt="" style="width: 60px;"></a>
                 <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded rotate-hor-center" href="#portfolio">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded rotate-hor-center text-secondary" href="#portfolio">
                         <span class="rotate-hor-center">P</span><span>O</span><span>R</span><span>T</span><span>F</span><span>O</span><span>L</span><span>I</span><span>O</span>
                         </a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded rotate-hor-center" href="#about">À PROPOS</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded rotate-hor-center" href="#contact">CONTACT</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded rotate-hor-center text-secondary" href="#about">À PROPOS</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded rotate-hor-center text-secondary" href="#contact">CONTACT</a></li>
                         {% if is_granted('ROLE_ADMIN') %}
-                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded rotate-hor-center" href="{{ path('app_custom_portfolio') }}">BACKOFFICE</a></li>
+                            <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded rotate-hor-center text-secondary" href="{{ path('app_custom_portfolio') }}">BACKOFFICE</a></li>
                         {% endif %}
                     </ul>
                 </div>
@@ -174,9 +181,12 @@
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar rotate3dBis mb-5 rounded-circle border scale-in-hor-center shadow-lg" src="{{ asset('uploads/photos/' ~ custom.photoFile) }}" alt="" style="width: 300px; background: {{ custom.avatarColor }};">
+                <div class="fader masthead-avatar">
+                    <img class=" mb-5 rounded-circle border first-avatar shadow-lg" src="{{ asset('uploads/photos/' ~ custom.photoFile) }}" alt="" style="width: 100%; background: {{ custom.avatarColor }}; z-index: 4;">
+                    <img class=" mb-5 rounded-circle border last-avatar shadow-lg" src="{{ asset('uploads/photos/' ~ custom.avatar2) }}" alt="" style="width: 100%; background: {{ custom.avatarColor }}; z-index: 2;">
+                </div>
                 <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0 focus-in-contract">Grégory LACROIX</h1>
+                <h1 class="col-lg-8 masthead-heading mb-0 focus-in-contract">{{ custom.skills }}</h1>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
@@ -184,7 +194,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">{{ custom.skills }}</p>
+                <p class="masthead-subheading font-weight-light mb-0">{{ custom.slogan }}</p>
             </div>
         </header>
 
@@ -207,7 +217,12 @@
                         <div class="col-md-6 col-lg-4 mb-5">
                             <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#{{ website.title }}">
                                 <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                    <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                    <div class="portfolio-item-caption-content d-flex justify-content-center align-items-center text-center text-white text-uppercase">
+                                    {% if website.logo is not null %}
+                                        <img src="{{ asset('/uploads/logo-portfolio/' ~ website.logo) }}" class="bg-white rounded me-2" alt="logo-{{ website.title }}" style="width: 10%;">
+                                    {% endif %}
+                                    {{ website.title }}
+                                    </div>
                                 </div>
                                 <img class="img-fluid" src="{{ asset('uploads/screenshots/' ~ website.screenshotFile) }}" alt="..." />
                             </div>
@@ -230,9 +245,10 @@
                 </div>
                 <!-- About Section Content-->
                 <div class="row">
-                    {# <div class="col-lg-4 ms-auto"><p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div> #}
-                    <div class="">
+                    <div>
+                        <h3 class="text-center mb-3">{{ custom.titleAbout }}</h3>
+                    </div>
+                    <div class="col-lg-6 mx-auto">
                     {{ custom.about|raw }}
                     </div>
                 </div>
@@ -258,14 +274,8 @@
                 </div>
                 <!-- Contact Section Form-->
                 <div class="row justify-content-center">
+                    <h4 class="text-center">Intéressé à travailler ensemble ?</h4>
                     <div class="col-lg-8 col-xl-7">
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!-->
                         <form id="contactForm" data-sb-form-api-token="API_TOKEN">
                             <!-- Name input-->
                             <div class="form-floating mb-3">
@@ -292,25 +302,13 @@
                                 <label for="message">Message</label>
                                 <div class="invalid-feedback" data-sb-feedback="message:required">Champ requit.</div>
                             </div>
-                            <!-- Submit success message-->
-                            <!---->
-                            <!-- This is what your users will see when the form-->
-                            <!-- has successfully submitted-->
                             <div class="d-none" id="submitSuccessMessage">
                                 <div class="text-center mb-3">
                                     <div class="fw-bolder">Votre message a bien été envoyé!</div>
-                                    {# To activate this form, sign up at
-                                    <br />
-                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a> #}
                                 </div>
                             </div>
-                            <!-- Submit error message-->
-                            <!---->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
                             <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                            <!-- Submit Button-->
-                            <button class="btn bg-primary border-0 btn-xl disabled g-recaptcha vibrate-1" data-sitekey="6LdllKIlAAAAAJltQfdBdpMnCTlFpDN8PAOgbWD7" data-callback='onSubmit' data-action='submit' style="background: {{ custom.contentColor }} !important; color: #fff !important;" id="submitButton" type="submit">ENVOYER</button>
+                            <button class="btn border-0 btn-xl disabled g-recaptcha vibrate-1" data-sitekey="6LdllKIlAAAAAJltQfdBdpMnCTlFpDN8PAOgbWD7" data-callback='onSubmit' data-action='submit' style="background-color: {{ custom.contentColor }} !important; color: #fff !important;" id="submitButton" type="submit">ENVOYER</button>
                         </form>
                     </div>
                 </div>
@@ -329,31 +327,24 @@
                         </p>
                     </div> #}
                     <!-- Footer Social Icons-->
-                    <div class="col-lg-6 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">RÉSEAUX SOCIAUX</h4>
+                    <div>
+                        <img src="{{ asset('uploads/logos/' ~ custom.logoFile) }}" alt="" class="rounded logo-footer bg-white mb-4 p-2" style="width: 80px;">
+                    </div>
+                    <div class="col-lg-7 mb-5 mt-1 mb-lg-0">
+                        <h4 class="mb-4">{{ custom.sloganFooter }}</h4>
                         <a class="btn btn-outline-light btn-social mx-1 rotate-diagonal-1" href="{{ custom.linkFacebook }}" target="_blank"><i class="fab fa-fw fa-facebook-f"></i></a>
                         <a class="btn btn-outline-light btn-social mx-1 rotate-diagonal-1" href="{{ custom.linkTwitter }}" target="_blank"><i class="fab fa-fw fa-twitter"></i></a>
                         <a class="btn btn-outline-light btn-social mx-1 rotate-diagonal-1" href="{{ custom.linkLinkedin }}" target="_blank"><i class="fab fa-fw fa-linkedin-in"></i></a>
                         {# <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a> #}
                     </div>
-                    <!-- Footer About Text-->
-                    {# <div class="col-lg-4">
-                        <h4 class="text-uppercase mb-4">À PROPOS DE FREELANCER</h4>
-                        <p class="lead mb-0">
-                            Freelance is a free to use, MIT licensed Bootstrap theme created by
-                            <a href="http://startbootstrap.com">Start Bootstrap</a>
-                            .
-                        </p>
-                    </div> #}
                 </div>
             </div>
         </footer>
         <!-- Copyright Section-->
         <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright &copy; 2023 - Tous droits réservés - <a href="{{ path('app_mentions') }}" class="text-white" target="_blank">Mentions légales</a></small></div>
+            <div class="container"><small class='text-secondary'>Copyright &copy; 2023 - Tous droits réservés - <a href="{{ path('app_mentions') }}" class="text-secondary" target="_blank">Mentions légales</a></small></div>
         </div>
         <!-- Portfolio Modals-->
-        <!-- Portfolio Modal 1-->
         {% for website in websites %}
         <div class="portfolio-modal modal fade" id="{{ website.title }}" tabindex="-1" aria-labelledby="{{ website.title }}" aria-hidden="true">
             <div class="modal-dialog modal-xl">
@@ -368,14 +359,20 @@
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-icon">
+                                        {% if website.logo is not null %}
+                                            <img src="{{ asset('/uploads/logo-portfolio/' ~ website.logo) }}" alt="logo-{{ website.title }}" style="width: 50%;">
+                                        {% else %}
+                                            <i class="fas fa-star"></i>
+                                        {% endif %}
+                                        </div>
                                         <div class="divider-custom-line"></div>
                                     </div>
                                     <!-- Portfolio Modal - Image-->
                                     <a href="{{ website.url }}" target="_blank"><img class="img-fluid" src="{{ asset('uploads/screenshots/' ~ website.screenshotFile) }}" alt="{{ website.title }}" /></a>
                                     <!-- Portfolio Modal - Text-->
                                     <p class="my-4">{{ website.description }}</p>
-                                    <button class="btn btn-secondary" data-bs-dismiss="modal">
+                                    <button class="btn text-white" style="background-color: {{ custom.contentColor }} !important;" data-bs-dismiss="modal">
                                         <i class="fas fa-xmark fa-fw"></i>
                                         Fermer
                                     </button>
@@ -387,166 +384,7 @@
             </div>
         </div>
         {% endfor %}
-        <!-- Portfolio Modal 2-->
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Tasty Cake</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/cake.png" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 3-->
-        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Circus Tent</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/circus.png" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 4-->
-        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Controller</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/game.png" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 5-->
-        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" aria-labelledby="portfolioModal5" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Locked Safe</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/safe.png" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 6-->
-        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Submarine</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/submarine.png" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close Window
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+       
         <script src="https://www.google.com/recaptcha/api.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="{{ asset('js/scripts.js') }}"></script>
@@ -591,42 +429,21 @@
             });
         });
 
-        /*window.addEventListener('DOMContentLoaded', event => {
-
-            var avatar = document.body.querySelector('.masthead-avatar');
-            // console.log(avatar);
-
-            avatar.addEventListener("mouseover", function() {
-                // alert('test');
-                console.log(this.src);
-                this.src = '/uploads/photos/{{ custom.avatar2 }}';
-                this.classList.add("rotate3dBis");
-            });
-
-            avatar.addEventListener("mouseleave", function() {
-                // alert('test');
-                // console.log(this);
-                this.src = '/uploads/photos/{{ custom.photoFile }}';
-                this.classList.remove("rotate3dBis");
-            });
-        });*/
-
         $(document).ready( function() {
-            //$('*').css('-webkit-transition','2s all');
-            $('.masthead-avatar').hover(
+            /*$('.masthead-avatar').hover(
                 function() {
-                    // console.log($('.masthead-avatar').attr('src'));
-                    $(this).animate({ 'zoom': 1.2}, 400);
-                    $(this).attr('src', '/uploads/photos/{{ custom.avatar2 }}');
-                    // $(this).animate({ opacity: "0" }, 400);
-
+                    $('.masthead-avatar').attr('src', '/uploads/photos/{{ custom.avatar2 }}');
                 },
                 function() {
-                    $(this).animate({ 'zoom': 1 }, 400);
-                    $(this).attr('src', '/uploads/photos/{{ custom.photoFile }}');
-                    // $(this).animate({ opacity: "1" }, 400);
+                    $('.masthead-avatar').attr('src', '/uploads/photos/{{ custom.photoFile }}');
+            });*/
 
-            });
+            /*$('.fader').hover(function() {
+                $(this).find("img:first").css({
+                    "opacity": "0",
+                    "transition": "1s all"
+                });
+            });*/
         });
         </script>
     </body>

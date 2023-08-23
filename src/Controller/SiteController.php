@@ -35,7 +35,7 @@ class SiteController extends AbstractController
         // dump($custom); 
 
         $websites = $this->em->getRepository(Portfolio::class)->findBy(['isActive' => 1]);
-        //dump($websites);
+        // dump($websites);
 
         return $this->render('site/index.html.twig', [
             'custom' => $custom,

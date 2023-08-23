@@ -26,6 +26,12 @@ class CustomFormType extends AbstractType
             ->add('skills', TextType::class, [
                 'label' => 'Compétences'
             ])
+            ->add('slogan', TextType::class, [
+                'label' => 'Slogan'
+            ])
+            ->add('sloganFooter', TextType::class, [
+                'label' => 'Slogan footer'
+            ])
             ->add('linkFacebook', TextType::class, [
                 'label' => 'Facebook'
             ])
@@ -34,6 +40,9 @@ class CustomFormType extends AbstractType
             ])
             ->add('linkLinkedin', TextType::class, [
                 'label' => 'Linkedin'   
+            ])
+            ->add('titleAbout', TextType::class, [
+                'label' => 'Titre à propos'   
             ])
             ->add('about', CKEditorType::class, [
                 'label' => 'À propos de vous',

@@ -40,6 +40,12 @@ class PortfolioFormType extends AbstractType
                 'data_class' => null,
                 // 'mapped' => false,
             ])
+            ->add('logoVich', VichImageType::class, [ 
+                'label' => 'Logo WebSite',
+                'required' => false,
+                'data_class' => null,
+                // 'mapped' => false,
+            ])
         ;
     }
 

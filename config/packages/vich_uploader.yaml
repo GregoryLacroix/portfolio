@@ -21,6 +21,14 @@ vich_uploader:
             uri_prefix: /uploads/screenshots
             upload_destination: '%kernel.project_dir%/public/uploads/screenshots'
             namer: vich_uploader.namer_uniqid
+        logo_portfolio:
+            uri_prefix: /uploads/logo-portfolio
+            upload_destination: '%kernel.project_dir%/public/uploads/logo-portfolio'
+            namer: vich_uploader.namer_uniqid
+
+
+
+            
 
             
 

@@ -92,6 +92,15 @@ class CustomSite
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $avatarColor = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $slogan = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $sloganFooter = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $titleAbout = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -414,5 +423,41 @@ class CustomSite
     public function getAvatar2FileVich()
     {
         return $this->avatar2FileVich;
+    }
+
+    public function getSlogan(): ?string
+    {
+        return $this->slogan;
+    }
+
+    public function setSlogan(?string $slogan): self
+    {
+        $this->slogan = $slogan;
+
+        return $this;
+    }
+
+    public function getSloganFooter(): ?string
+    {
+        return $this->sloganFooter;
+    }
+
+    public function setSloganFooter(?string $sloganFooter): self
+    {
+        $this->sloganFooter = $sloganFooter;
+
+        return $this;
+    }
+
+    public function getTitleAbout(): ?string
+    {
+        return $this->titleAbout;
+    }
+
+    public function setTitleAbout(?string $titleAbout): self
+    {
+        $this->titleAbout = $titleAbout;
+
+        return $this;
     }
 }

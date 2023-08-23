@@ -44,6 +44,12 @@ class Portfolio
     #[ORM\Column(nullable: true)]
     private ?bool $isActive = null;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $logo = null;
+
+    #[Vich\UploadableField(mapping: 'logo_portfolio', fileNameProperty: 'logo')]
+    private $logoVich;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -150,5 +156,36 @@ class Portfolio
         $this->isActive = $isActive;
 
         return $this;
+    }
+
+    public function getLogo(): ?string
+    {
+        return $this->logo;
+    }
+
+    public function setLogo(?string $logo): self
+    {
+        $this->logo = $logo;
+
+        return $this;
+    }
+
+    public function setLogoVich(File $logo = null)
+    {
+        $this->logoVich = $logo;
+
+        if ($logo) {
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return File|null
+     */
+    public function getLogoVich()
+    {
+        return $this->logoVich;
     }
 }
